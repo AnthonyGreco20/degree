@@ -1,25 +1,26 @@
 const Matrix = require("matrix-js");
 
 let A = Matrix([
-    [1,1,0,1,0],
-    [1,0,1,0,0],
-    [0,1,0,0,0],
-    [1,0,0,0,1],
-    [0,0,0,1,0]
+  [1,1,0,1,0],
+  [1,0,1,0,0],
+  [0,1,0,0,0],
+  [1,0,0,0,1],
+  [0,0,0,1,0]
 ]);
 //Code here
 function degree(mtrx,v){
-  var sum=0;
-  var degreelist= mtrx(v);
-  for(e=0;e<degreelist.length;e++){
-    sum=sum+degreelist[e];
+  var sum = 0
+  var degreelist = mtrx(v);
+  for(let i = 0; i < degreelist.length; i++){
+    sum = sum + degreelist[i];
   }
-  return sum
+  return sum;
 }
 
 function degreecentrality(mtrx,v){
-  var neighbors=0;
-  
+  var neighbors = mtrx.size();
+  return degree(mtrx,v)/neighbors;
+
 }
 
 //Challenge
